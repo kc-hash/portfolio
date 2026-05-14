@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amadou Kassé - Portfolio</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+nav {
+  background: #0d2137;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo { display: flex; align-items: center; gap: 12px; }
+
+.logo-icon {
+  background: #e8a020;
+  color: white;
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; font-size: 14px;
+}
+
+.logo-text strong { color: white; display: block; font-size: 14px; }
+.logo-text span { color: #7a9bbf; font-size: 11px; }
+
+nav ul { list-style: none; display: flex; gap: 25px; }
+nav a { color: #aac4df; text-decoration: none; font-size: 13px; }
+nav a:hover { color: #e8a020; }
+
+.hero {
+  background: white;
+  margin: 30px 50px;
+  border-radius: 14px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.badge {
+  background: #fff3d6;
+  color: #b07010;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero h1 { font-size: 30px; line-height: 1.25; color: #0d2137; margin-bottom: 15px; }
+.hero p { font-size: 13px; color: #666; line-height: 1.8; max-width: 380px; margin-bottom: 25px; }
+
+.btns { display: flex; gap: 12px; margin-bottom: 30px; }
+
+.btn-orange {
+  background: #e8a020; color: white;
+  padding: 10px 22px; border-radius: 7px;
+  text-decoration: none; font-size: 13px;
+}
+
+.btn-border {
+  border: 1.5px solid #ccc; color: #444;
+  padding: 10px 22px; border-radius: 7px;
+  text-decoration: none; font-size: 13px;
+}
+
+.stats { display: flex; gap: 30px; }
+.stats strong { display: block; font-size: 18px; color: #e8a020; }
+.stats span { font-size: 11px; color: #999; }
+
+.photo {
+  width: 240px; height: 290px;
+  border-radius: 12px;
+  background: #dde4ed;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+
+section { padding: 55px 50px; }
+
+.titre { text-align: center; font-size: 20px; color: #0d2137; margin-bottom: 30px; }
+
+.grille2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.carte {
+  background: white;
+  padding: 22px;
+  border-radius: 10px;
+  border-left: 4px solid #e8a020;
+}
+
+.carte h3 { color: #0d2137; font-size: 14px; margin-bottom: 10px; }
+.carte p { font-size: 12px; color: #666; line-height: 1.75; }
+
+.grille3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.projet {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.projet-img {
+  width: 100%; height: 150px;
+  background: #dde4ed;
+  overflow: hidden;
+}
+
+.projet-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.projet-info { padding: 15px; }
+.projet-info h3 { font-size: 13px; color: #0d2137; margin-bottom: 6px; }
+.projet-info p { font-size: 11px; color: #888; line-height: 1.6; }
+
+.profil-chiffres {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.chiffre {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 145px;
+}
+
+.chiffre strong { display: block; font-size: 24px; color: #e8a020; margin-bottom: 6px; }
+.chiffre span { font-size: 11px; color: #999; }
+
+.contact {
+  background: #0d2137;
+  color: white;
+  text-align: center;
+  padding: 55px 50px;
+  margin: 0 50px 40px;
+  border-radius: 14px;
+}
+
+.contact h2 { font-size: 22px; margin-bottom: 12px; }
+.contact p { font-size: 13px; opacity: 0.75; max-width: 440px; margin: 0 auto 25px; line-height: 1.75; }
+
+.contact-btns { display: flex; justify-content: center; gap: 14px; }
+
+.btn-orange2 {
+  background: #e8a020; color: white;
+  padding: 10px 24px; border-radius: 7px;
+  text-decoration: none; font-size: 13px;
+}
+
+.btn-blanc {
+  border: 2px solid white; color: white;
+  padding: 10px 24px; border-radius: 7px;
+  text-decoration: none; font-size: 13px;
+}
+
+footer {
+  text-align: center; padding: 18px;
+  font-size: 11px; color: #aaa;
+  background: white;
+}
+
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; flex-direction: column; gap: 12px; }
+  nav ul { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .hero { flex-direction: column; margin: 15px; padding: 28px 20px; }
+  .hero h1 { font-size: 22px; }
+  .photo { width: 100%; height: 220px; }
+  .grille2, .grille3 { grid-template-columns: 1fr; }
+  .profil-chiffres { flex-direction: column; align-items: center; }
+  section { padding: 38px 20px; }
+  .contact { margin: 0 15px 30px; padding: 40px 20px; }
+  .contact-btns { flex-direction: column; align-items: center; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grille3 { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-icon">AK</div>
+    <div class="logo-text">
+      <strong>Amadou Kassé</strong>
+      <span>Data Science &amp; Intelligence Artificielle</span>
+    </div>
+  </div>
+  <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#profil">Profil</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="accueil">
+  <div>
+    <span class="badge">⚡ Data Science · Machine Learning · IA</span>
+    <h1>Analyser les données,<br>construire l'intelligence<br>de demain</h1>
+    <p>Bonjour, je suis Amadou Kassé, étudiant en Data Science à l'Université Cheikh Anta Diop de Dakar. Passionné par l'IA, l'analyse de données et la création de modèles prédictifs à fort impact.</p>
+    <div class="btns">
+      <a href="#projets" class="btn-orange">Voir mes projets</a>
+      <a href="#contact" class="btn-border">Me contacter</a>
+    </div>
+    <div class="stats">
+      <div><strong>8+</strong><span>Projets réalisés</span></div>
+      <div><strong>Python</strong><span>Langage principal</span></div>
+      <div><strong>IA</strong><span>Machine Learning</span></div>
+    </div>
+  </div>
+  <div class="photo">
+    <img src="AK.png" alt="Amadou Kassé">
+  </div>
+</div>
+
+<section id="apropos">
+  <h2 class="titre">À propos de moi</h2>
+  <div class="grille2">
+    <div class="carte">
+      <h3>Mon parcours</h3>
+      <p>Étudiant en Master Data Science à l'UCAD de Dakar, après une licence en Mathématiques et Informatique. Solides bases en statistiques, programmation et algorithmique appliquée aux données.</p>
+    </div>
+    <div class="carte">
+      <h3>Mes objectifs</h3>
+      <p>Devenir Data Scientist ou Ingénieur IA, capable de concevoir des systèmes intelligents créateurs de valeur pour les organisations en Afrique et à l'international.</p>
+    </div>
+    <div class="carte">
+      <h3>Mes compétences</h3>
+      <p>Python, SQL, Scikit-learn, TensorFlow, Power BI, Pandas, NumPy, MongoDB. Modélisation ML, visualisation de données et déploiement d'applications IA avec Streamlit.</p>
+    </div>
+    <div class="carte">
+      <h3>Ce que je recherche</h3>
+      <p>Un stage ou une collaboration en Data Science ou Business Intelligence pour appliquer mes compétences sur des projets réels à fort impact dans des entreprises innovantes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projets" style="background:white; padding: 55px 50px;">
+  <h2 class="titre">Mes projets</h2>
+  <div class="grille3">
+
+    <div class="projet">
+      <div class="projet-img"><img src="p1.png" alt="Projet 1"></div>
+      <div class="projet-info">
+        <h3>Prédiction de churn client</h3>
+        <p>Modèle de classification pour détecter les clients susceptibles de quitter un service télécom — précision 87%.</p>
+      </div>
+    </div>
+
+    <div class="projet">
+      <div class="projet-img"><img src="p2.png" alt="Projet 2"></div>
+      <div class="projet-info">
+        <h3>Dashboard Business Intelligence</h3>
+        <p>Tableau de bord Power BI pour le suivi des ventes et indicateurs clés d'une PME sénégalaise.</p>
+      </div>
+    </div>
+
+    <div class="projet">
+      <div class="projet-img"><img src="p3.png" alt="Projet 3"></div>
+      <div class="projet-info">
+        <h3>Analyse de sentiments NLP</h3>
+        <p>Traitement du langage naturel pour analyser les avis clients en français et en wolof.</p>
+      </div>
+    </div>
+
+    <div class="projet">
+      <div class="projet-img"><img src="p4.png" alt="Projet 4"></div>
+      <div class="projet-info">
+        <h3>Détection de fraude bancaire</h3>
+        <p>Détection d'anomalies dans des transactions financières avec des algorithmes non supervisés.</p>
+      </div>
+    </div>
+
+    <div class="projet">
+      <div class="projet-img"><img src="p5.png" alt="Projet 5"></div>
+      <div class="projet-info">
+        <h3>Système de recommandation</h3>
+        <p>Application collaborative déployée avec Streamlit, basée sur les préférences utilisateurs.</p>
+      </div>
+    </div>
+
+    <div class="projet">
+      <div class="projet-img"><img src="p6.png" alt="Projet 6"></div>
+      <div class="projet-info">
+        <h3>Prévision météo Sénégal</h3>
+        <p>Modèle LSTM pour la prévision des précipitations dans les régions agricoles du Sénégal.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="profil" style="text-align:center;">
+  <h2 class="titre">Mon profil</h2>
+  <div class="profil-chiffres">
+    <div class="chiffre"><strong>UCAD</strong><span>Université Cheikh Anta Diop, Dakar</span></div>
+    <div class="chiffre"><strong>8+</strong><span>Projets Data &amp; IA réalisés</span></div>
+    <div class="chiffre"><strong>100%</strong><span>Motivation pour apprendre</span></div>
+    <div class="chiffre"><strong>2026</strong><span>Disponible pour un stage</span></div>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>Disponible pour des stages ou collaborations en Data Science et IA. N'hésitez pas à me contacter.</p>
+  <div class="contact-btns">
+    <a href="mailto:amadou.kasse@email.com" class="btn-orange2">Envoyer un email</a>
+    <a href="cv.pdf" class="btn-blanc">Télécharger mon CV</a>
+  </div>
+</div>
+
+<footer>© 2026 Amadou Kassé — Data Science &amp; Intelligence Artificielle · Dakar, Sénégal</footer>
+
+</body>
+</html>
